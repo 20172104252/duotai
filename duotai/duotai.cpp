@@ -19,7 +19,16 @@ public:
 	int getfeet();
 	int getinch();
     virtual void display();
+	CFeet operator +(CFeet temp);
 };
+CFeet CFeet::operator +(CFeet temp)
+{
+	inch = temp.feet * 12 + temp.inch;
+	CFeet tp;
+	tp.setfeet(inch / 12);
+	tp.setinch(inch % 12);
+	return tp;
+}
 void CFeet::setfeet(int f)
 {
 	feet = f;
